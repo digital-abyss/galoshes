@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: mysql
+    ports:
+      - "33060:3306"
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: passw0rd!
+      MYSQL_DATABASE: galoshesdb
+      MYSQL_ROOT_PASSWORD: rootpassw0rd!
+    volumes:
+    - "${GALOSHES_DATA_ROOT_DIR:-.}/mysql:/var/lib/mysql"
